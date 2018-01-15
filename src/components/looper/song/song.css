@@ -1,0 +1,29 @@
+.Icon-container{
+    font-size:2.2em;  
+    float: left; 
+    color: cornflowerblue
+}
+.song-container{
+    width: 100%;
+    float: none;
+    overflow: hidden;
+}
+.song-details{
+    margin-left: 10%;
+    align-self: center   
+}
+.side-options{
+    margin-top: -11%;
+    margin-left: 95%;
+}
+.volume-settings{
+    margin-left: 65%;
+    float: left
+}
+.slider-container{
+    margin-left: 20%;
+    margin-top: -17%;
+}
+#clickableAwesomeFont {
+    cursor: pointer
+}
