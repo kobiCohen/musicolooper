@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './song.css'
+var FaPlayCircle = require('react-icons/lib/fa/play-circle');
+var FaStopCircle = require('react-icons/lib/fa/stop-circle')
+
 class Song extends Component {
 constructor(props){
   super(props)
@@ -29,22 +32,20 @@ render() {
   if (!this.state.isPlaying){
     console.log("icon is play")
    icon = 
-        <i className ="fa fa-play-circle"/>
-    }
-    else {
+        <FaPlayCircle/>
+      }
+        else {
       console.log("icon is stop")
     icon = 
-        <i className="fa fa-stop-circle"/>
+        <FaStopCircle/>
     }
     return (
         <div className = "song-container">
             <hr/>
             <div className = "Icon-container">
-            
-              <span id='clickableAwesomeFont' onClick={this.stopOrStartSong.bind(this)}>
+              <span id='clickableAwesomeFont' onClick={this.stopOrStartSong.bind(this)}>  
               {icon}
               </span>
-                
             </div>
 
             <div className = "song-details" >
