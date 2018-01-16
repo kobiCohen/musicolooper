@@ -19,15 +19,17 @@ class Looper extends Component {
                 songList: songs
         }); 
     }
-    playSong(song){
-        var audio = new Audio(song.url);
-        audio.pause()
-        audio.play()
+    playSong(song, isPlaying){
+        var audioElm = document.getElementById("audio1");
+        audioElm.src = song.url
+        if (isPlaying){
+            audioElm.pause()
+        }
+        else{
+            audioElm.play()
+        }
     }
-    stopSong(song){
-        var audio = new Audio(song.url);
-        audio.pause()
-    }
+
     playAll(){
         this.stopSong(this.state.songList[0])
     }
@@ -35,6 +37,7 @@ class Looper extends Component {
     render() {
         return (
             <div className = "looper-body">
+            <audio id="audio1">Canvas not supported</audio>
                 <a className="button is-rounded" onClick = {this.playAll}>Play</a>
                 <a className="button is-rounded">Sync</a>
                 <div>
@@ -43,7 +46,7 @@ class Looper extends Component {
                 <br/>
                 {this.state.songList.map(song =>{
                    return (
-                    <Song key = {song.Id} Id = {song.Id} owner= {song.owner} url = {song.url} playCallback = {this.playSong} stopCallback = {this.stopSong}>
+                    <Song key = {song.Id} Id = {song.Id} owner= {song.owner} url = {song.url} playerCallback = {this.playSong}>
                     </Song>
                     ) 
                 })}  
